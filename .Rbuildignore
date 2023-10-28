@@ -1,0 +1,9 @@
+^qplot\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^README\.Rmd$
+^NEWS.Rmd$
+^data-raw$
+^temp$
+^.*\.tmp
+^[\.]tmp$$
