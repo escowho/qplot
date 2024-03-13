@@ -22,15 +22,24 @@
 #' @param sizes A logical value indicating if the frequency and percentage of each
 #' category of var along the horizontal access is shown with the level labels on
 #' the plot.  Default: FALSE
-#' @param tukey A logical value indicating if an ANOVA and Tukey Tests for contasts
+#' @param tukey A logical value indicating if an ANOVA and Tukey Tests for contrasts
 #' should be performed
-#' @param skeleton PARAM_DESCRIPTION, Default: FALSE
-#' @param data_out PARAM_DESCRIPTION, Default: FALSE
-#' @return OUTPUT_DESCRIPTION
+#' @param skeleton A logical value to indicate if the syntax should be printed to
+#' the console.  This is useful if the default selections need tweaking so the
+#' user can see the raw syntax that can be used in place of the function.
+#' Default: FALSE
+#' @param data_out Logical indicating if the plot data should be returned.  If
+#' tukey parameter is set to TRUE, then it will output a list containing both the
+#' plot data and the tukey data.
+#' @return Outputs a png file of the nps plot if output path specified,
+#' otherwise generates plot on screen.
 #' @examples
 #' \dontrun{
 #' if(interactive()){
-#'  #EXAMPLE1
+#'  qplot::nps1 %>%
+#'  dplyr::select(-response_id) %>%
+#'    qplot_nps(data=., var=price, nps=nps, var_text="Price", rm.na=TRUE,
+#'              level_labels=c("Very Unsatisifed", "Unsatisfied", "Neither", "Satisified", "Very Satisfied"))
 #'  }
 #' }
 #' @export
