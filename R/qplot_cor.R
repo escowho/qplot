@@ -37,6 +37,8 @@
 #' Default: FALSE
 #' @param data_out A logical value to indicate if the process data file should be
 #' returned when skeleton=TRUE.  Default: FALSE
+#' @param ps Point size setting for grDevices::jpeg.  May need to reduce if lots
+#' of attributes are included.  Default=16.
 #' @param ... Pass additional parameters to corrplot.  Optional.
 #' @return Outputs a jpg file of the corrplot if output path specified, otherwise
 #' generates plot on screen.
@@ -64,7 +66,8 @@
 #' @importFrom cli cli_abort cli_warn
 
 qplot_cor <- function(data=NULL, first=NULL, names=NULL, colors=NULL,
-                      output=NULL, sort=FALSE, skeleton=FALSE, data_out=FALSE, ...){
+                      output=NULL, sort=FALSE, skeleton=FALSE, data_out=FALSE,
+                      ps=16, ...){
 
     # Checks ------------------------------------------------------------------
 
@@ -193,7 +196,7 @@ qplot_cor <- function(data=NULL, first=NULL, names=NULL, colors=NULL,
 
       # Output Version ----------------------------------------------------------
 
-      grDevices::jpeg(file_plot, width=5000, height=5000, res=300, pointsize=16)
+      grDevices::jpeg(file_plot, width=5000, height=5000, res=300, pointsize=ps)
       corrplot::corrplot(corr=corrs$r,
                          col=colors,
                          method="color",

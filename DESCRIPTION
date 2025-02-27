@@ -1,6 +1,6 @@
 Package: qplot
 Title: Generates various plots used by XM Data Science at Qualtrics
-Version: 0.0.0.9001
+Version: 0.0.0.9002
 Authors@R: 
     person("Matthew", "Sheffer", , "msheffer@qualtrics.com", role = c("aut", "cre"))
 Description: Generates various plots used by XM Data Science at Qualtrics.
