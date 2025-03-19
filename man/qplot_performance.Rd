@@ -12,7 +12,8 @@ qplot_performance(
   legend = TRUE,
   decimals = 1,
   skeleton = FALSE,
-  data_out = FALSE
+  data_out = FALSE,
+  ps = 10
 )
 }
 \arguments{
@@ -54,6 +55,9 @@ Default: FALSE}
 
 \item{data_out}{A logical value to indicate if the process data file should be
 returned when skeleton=TRUE.  Default: FALSE}
+
+\item{ps}{Point size setting for grDevices::jpeg.  May need to reduce if lots
+of attributes are included.  Default=10.}
 }
 \value{
 Outputs a png file of the performance plot if output path specified,

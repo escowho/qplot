@@ -13,6 +13,7 @@ qplot_cor(
   sort = FALSE,
   skeleton = FALSE,
   data_out = FALSE,
+  ps = 16,
   ...
 )
 }
@@ -50,6 +51,9 @@ Default: FALSE}
 
 \item{data_out}{A logical value to indicate if the process data file should be
 returned when skeleton=TRUE.  Default: FALSE}
+
+\item{ps}{Point size setting for grDevices::jpeg.  May need to reduce if lots
+of attributes are included.  Default=16.}
 
 \item{...}{Pass additional parameters to corrplot.  Optional.}
 }

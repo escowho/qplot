@@ -11,7 +11,8 @@ qplot_driver(
   sort = TRUE,
   legend = TRUE,
   decimals = 1,
-  skeleton = FALSE
+  skeleton = FALSE,
+  ps = 12
 )
 }
 \arguments{
@@ -44,6 +45,9 @@ rounding the displayed numbers in the graph. Default: 1}
 the console.  This is useful if the default selections need tweaking so the
 user can see the raw syntax that can be used in place of the function.
 Default: FALSE}
+
+\item{ps}{Point size setting for grDevices::jpeg.  May need to reduce if lots
+of attributes are included.  Default=12.}
 }
 \value{
 Outputs a png file of the driver plot if output path specified,

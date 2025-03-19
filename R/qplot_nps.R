@@ -31,6 +31,8 @@
 #' @param data_out Logical indicating if the plot data should be returned.  If
 #' tukey parameter is set to TRUE, then it will output a list containing both the
 #' plot data and the tukey data.
+#' @param ps Point size setting for grDevices::jpeg.  May need to reduce if lots
+#' of attributes are included.  Default=8.
 #' @return Outputs a png file of the nps plot if output path specified,
 #' otherwise generates plot on screen.
 #' @examples
@@ -53,7 +55,7 @@
 
 qplot_nps <- function(data, var, nps, var_text=NULL, level_labels=NULL, output=NULL,
                       legend=TRUE, rm.na = FALSE, sizes=FALSE, tukey=FALSE,
-                      skeleton = FALSE, data_out=FALSE){
+                      skeleton = FALSE, data_out=FALSE, ps=8){
 
   VAR <- rlang::enquo(var)
   NPS <- rlang::enquo(nps)

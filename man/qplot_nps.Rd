@@ -16,7 +16,8 @@ qplot_nps(
   sizes = FALSE,
   tukey = FALSE,
   skeleton = FALSE,
-  data_out = FALSE
+  data_out = FALSE,
+  ps = 8
 )
 }
 \arguments{
@@ -61,6 +62,9 @@ Default: FALSE}
 \item{data_out}{Logical indicating if the plot data should be returned.  If
 tukey parameter is set to TRUE, then it will output a list containing both the
 plot data and the tukey data.}
+
+\item{ps}{Point size setting for grDevices::jpeg.  May need to reduce if lots
+of attributes are included.  Default=8.}
 }
 \value{
 Outputs a png file of the nps plot if output path specified,

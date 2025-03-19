@@ -1,6 +1,6 @@
 Package: qplot
 Title: Generates various plots used by XM Data Science at Qualtrics
-Version: 0.0.0.9002
+Version: 0.0.0.9003
 Authors@R: 
     person("Matthew", "Sheffer", , "msheffer@qualtrics.com", role = c("aut", "cre"))
 Description: Generates various plots used by XM Data Science at Qualtrics.
@@ -36,4 +36,4 @@ Encoding: UTF-8
 Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2

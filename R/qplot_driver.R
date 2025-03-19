@@ -24,6 +24,8 @@
 #' the console.  This is useful if the default selections need tweaking so the
 #' user can see the raw syntax that can be used in place of the function.
 #' Default: FALSE
+#' @param ps Point size setting for grDevices::jpeg.  May need to reduce if lots
+#' of attributes are included.  Default=12.
 #' @return Outputs a png file of the driver plot if output path specified,
 #' otherwise generates plot on screen.
 #' @examples
@@ -37,7 +39,7 @@
 #' @importFrom ggplot2 ggplot geom_bar geom_text coord_flip scale_x_discrete ylim geom_hline labs theme_minimal scale_fill_manual theme
 
 qplot_driver <- function(data=NULL, labels=NULL, output=NULL,
-                         sort=TRUE, legend=TRUE, decimals=1, skeleton=FALSE){
+                         sort=TRUE, legend=TRUE, decimals=1, skeleton=FALSE, ps=12){
 
   # Checks ------------------------------------------------------------------
 
@@ -148,7 +150,7 @@ invisible(dev.off())"))
 
       driver_plot <- driver_plot +
         ggplot2::theme(axis.text.y=element_text(size=10, face="bold", color="black"))
-      png(plot_path, width=1920, height=1080, res=300, pointsize=12)
+      png(plot_path, width=1920, height=1080, res=300, pointsize=ps)
       print(driver_plot)
       invisible(dev.off())
     }

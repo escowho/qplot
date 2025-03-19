@@ -32,6 +32,8 @@
 #' Default: FALSE
 #' @param data_out A logical value to indicate if the process data file should be
 #' returned when skeleton=TRUE.  Default: FALSE
+#' @param ps Point size setting for grDevices::jpeg.  May need to reduce if lots
+#' of attributes are included.  Default=10.
 #' @return Outputs a png file of the performance plot if output path specified,
 #' otherwise generates plot on screen.
 #' @examples
@@ -48,7 +50,7 @@
 #' @importFrom tidyr pivot_longer pivot_wider
 #' @importFrom ggplot2 ggplot aes geom_bar geom_col scale_x_discrete coord_flip scale_fill_manual geom_text position_stack labs theme_minimal theme element_blank unit margin element_text
 qplot_performance <- function(data=NULL, labels=NULL, order=NULL, output=NULL,
-                              legend=TRUE, decimals=1, skeleton=FALSE, data_out=FALSE){
+                              legend=TRUE, decimals=1, skeleton=FALSE, data_out=FALSE, ps=10){
 
   # Checks ------------------------------------------------------------------
 
@@ -201,7 +203,7 @@ qplot_performance <- function(data=NULL, labels=NULL, order=NULL, output=NULL,
 
       performance_plot <- performance_plot +
         ggplot2::theme(axis.text.y=ggplot2::element_text(size=10, face="bold", color="black"))
-      png(plot_path, width=1920, height=1080, res=300, pointsize=10, antialias="cleartype")
+      png(plot_path, width=1920, height=1080, res=300, pointsize=ps, antialias="cleartype")
 
       #if (Sys.getenv("QPLOT_TEST") == TRUE){
       #  suppressWarnings(print(performance_plot))
